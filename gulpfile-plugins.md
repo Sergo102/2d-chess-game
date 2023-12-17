@@ -10,3 +10,7 @@ gulp-sourcemaps
 gulp-sass
 sass
 gulp-rename
+
+gulp-babel
+@babel-core
+@babel/preset-env
