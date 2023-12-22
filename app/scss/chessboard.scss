@@ -20,18 +20,18 @@
     }
   }.even{
     .square:nth-child(odd){
-      background: var(--beige);   
+      background: var(--white);   
     }
     .square:nth-child(even){
-      background: var(--brown);
+      background: var(--black);
     }
   }
   .odd{
     .square:nth-child(odd){
-      background: var(--brown);   
+      background: var(--black);   
     }
     .square:nth-child(even){
-      background: var(--beige);
+      background: var(--white);
     }
   }
 }
