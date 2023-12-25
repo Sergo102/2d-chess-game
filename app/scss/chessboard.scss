@@ -1,37 +1,22 @@
-.board{
-  width: 800px;
-  height: 800px;
-  margin-left: 550px;
+body{
+  margin: 0;
+  padding: 0;
   display: flex;
-  flex-direction: column;
-  .row{
-    width: 100%;
-    height: auto;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+  justify-content: center;
+  .board{
+    width: auto;
+    display: grid;
+    grid-template-columns: 85px 85px 85px 85px 85px 85px 85px 85px;
+    grid-template-rows: 85px auto 85px; 
+    border: 1px solid black;
+    gap: 0;
     .square{
-      width: 100px;
-      height: 100px;
-      border: 1px solid black;
+      width: 85px;
+      height: 85px;
       display: flex;
       justify-content: center;
       align-items: center;
-    }
-  }.even{
-    .square:nth-child(odd){
-      background: var(--white);   
-    }
-    .square:nth-child(even){
-      background: var(--black);
-    }
-  }
-  .odd{
-    .square:nth-child(odd){
-      background: var(--black);   
-    }
-    .square:nth-child(even){
-      background: var(--white);
+      border: 1px solid black;
     }
   }
 }
