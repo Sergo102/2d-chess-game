@@ -14,3 +14,5 @@ gulp-rename
 gulp-babel
 @babel-core
 @babel/preset-env
+
+gulp-concat

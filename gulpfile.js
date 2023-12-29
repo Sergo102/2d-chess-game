@@ -4,9 +4,9 @@ const rename = require('gulp-rename');
 const plumber = require('gulp-plumber');
 const browserSync = require('browser-sync').create();
 const sourcemaps = require("gulp-sourcemaps");
-const babel = require('gulp-babel')
+const babel = require('gulp-babel');
+const concat = require('gulp-concat');
 
-// It works
 function scssTask(){
   return src('app/scss/style.scss')
     .pipe(plumber())
@@ -19,7 +19,6 @@ function scssTask(){
     .pipe(browserSync.stream())
 }
 
-// It works
 function jsTask(){
   return src('app/js/**/*.js')
     .pipe(sourcemaps.write())
@@ -28,9 +27,10 @@ function jsTask(){
       }))
     .pipe(sourcemaps.write())
     .pipe(dest('dist/js'))
+    // .pipe(concat('index.js'))
+    // .pipe(dest('dist/js'));
 }
 
-// It works
 function browserSyncServe(cb){
   browserSync.init({
     server: {
@@ -41,13 +41,11 @@ function browserSyncServe(cb){
   cb(); 
 }
 
-// It works
 function browserSyncReload(cb){
   browserSync.reload();
   cb();
 }
 
-// It works
 function watcher(){
   watch('app/html/**/*.html', browserSyncReload);
   watch(['app/scss/**/*.scss', 'app/js/**/*.js'], series(scssTask, jsTask, browserSyncReload));

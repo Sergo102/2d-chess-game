@@ -25,5 +25,11 @@ body{
       align-items: center;
       border: 1px solid black;
     }
+    .blackbg{
+      background-color: var(--black);
+    }
+    .whitebg{
+      background-color: var(--white);
+    }
   }
 }
