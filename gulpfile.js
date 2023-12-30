@@ -25,9 +25,9 @@ function jsTask(){
       .pipe(babel({
         presets: ['@babel/preset-env']
       }))
+      .pipe(concat('index.js'))
     .pipe(sourcemaps.write())
     .pipe(dest('dist/js'))
-    // .pipe(concat('index.js'))
     // .pipe(dest('dist/js'));
 }
 

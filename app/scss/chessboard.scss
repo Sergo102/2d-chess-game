@@ -24,6 +24,15 @@ body{
       justify-content: center;
       align-items: center;
       border: 1px solid black;
+      .piece{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        z-index: 999999;
+      }
     }
     .blackbg{
       background-color: var(--black);
