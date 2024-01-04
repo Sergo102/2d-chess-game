@@ -32,6 +32,9 @@ body{
         align-items: center;
         cursor: pointer;
         z-index: 999999;
+        img{
+          z-index: 1;
+        }
       }
     }
     .blackbg{
