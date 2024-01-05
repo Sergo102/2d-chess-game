@@ -1,51 +1,18 @@
 "use strict";
 
-function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, _toPropertyKey(descriptor.key), descriptor); } }
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
-function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : String(i); }
-function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
-document.addEventListener('DOMContentLoaded', function () {
-  // Get the root element
-  var root = document.documentElement;
-  // Get the computed styles of the root element
-  var style = getComputedStyle(root);
-  // Get the value of the --color-font-general variable
-  var pink = style.getPropertyValue('--pink');
-  var green = style.getPropertyValue('--green');
-  var Piece = /*#__PURE__*/function () {
-    function Piece(letter) {
-      _classCallCheck(this, Piece);
-      this.letter = letter;
-      this.type = letter.toLowerCase(); // k, q, b, n, r or p
-      this.isWhite = letter !== this.type; // Capital <==> white
-      this.color = letter !== this.type ? this.color = 'white' : this.color = 'black';
-      this.square = null;
-      this.name = {
-        k: "king",
-        q: "queen",
-        b: "bishop",
-        n: "knight",
-        r: "rook",
-        p: "pawn"
-      }[this.type];
-      this.src = "../img/".concat(this.color, " pieces/").concat(this.name, ".png");
+var board = document.getElementById('board');
+for (var i = 0; i < 8; i++) {
+  for (var j = 0; j < 8; j++) {
+    var square = document.createElement('div');
+    square.classList.add('square');
+    if ((i + j) % 2 === 0) {
+      square.classList.add('black');
+    } else {
+      square.classList.add('white');
     }
-    _createClass(Piece, [{
-      key: "remove",
-      value: function remove() {
-        if (this.square) this.square.piece = null;
-        this.square = null;
-        return this;
-      }
-    }]);
-    return Piece;
-  }();
-  var img = document.createElement('img');
-  var p_A7 = new Piece('p');
-  alert(p_A7.src);
-});
+    board.appendChild(square);
+  }
+}
 "use strict";
 
 // Squares as variables
